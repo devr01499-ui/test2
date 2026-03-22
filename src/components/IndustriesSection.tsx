@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Activity, Landmark, Home, Laptop, Briefcase, Zap, CheckCircle2 } from 'lucide-react';
+import { Activity, Landmark, Home, Laptop, Briefcase, Zap, CheckCircle2, ShoppingCart, Video } from 'lucide-react';
 
 const INDUSTRIES_DATA = [
   {
@@ -76,6 +76,44 @@ const INDUSTRIES_DATA = [
         role: "Marketing Director",
         service: "Custom AI Jarvis",
         benefit: "Generate dynamic, hyper-personalized email outreach sequences at scale based on live competitor analysis."
+      }
+    ]
+  },
+  {
+    id: "d2c",
+    name: "D2C Brands & E-commerce",
+    icon: ShoppingCart,
+    departments: [
+      {
+        name: "Customer Experience",
+        role: "Support Manager",
+        service: "AI Chatbots",
+        benefit: "Instantly handle order tracking, sizing questions, and return requests 24/7 without growing your human headcount."
+      },
+      {
+        name: "Retention Strategy",
+        role: "Growth Marketer",
+        service: "Data Analytics",
+        benefit: "Predict churn before it happens and automatically fire off ultra-personalized discount campaigns via AI Automation."
+      }
+    ]
+  },
+  {
+    id: "creators",
+    name: "Digital Creators & Influencers",
+    icon: Video,
+    departments: [
+      {
+        name: "Audience Engagement",
+        role: "Community Manager",
+        service: "Custom AI Jarvis",
+        benefit: "Automate Instagram and TikTok DMs. Detect intent to instantly sell digital products or book calls inside the chat without lifting a finger."
+      },
+      {
+        name: "Content Production",
+        role: "Video Editor / Creator",
+        service: "AI Automation",
+        benefit: "Generate viral AI videos and shorts at scale for a minimal fraction of the cost, eliminating expensive software subscriptions and endless prompting."
       }
     ]
   }
