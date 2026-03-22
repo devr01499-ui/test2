@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
 import NodeCard from '../components/NodeCard';
 import ServiceChat from '../components/ServiceChat';
+import IndustriesSection from '../components/IndustriesSection';
 
 export default function Home() {
   return (
@@ -62,6 +63,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Interactive Industries Section */}
+      <IndustriesSection />
 
       {/* Video Demo Section -> Now Image Section */}
       <section className="py-24 bg-sky-500 text-white overflow-hidden">
