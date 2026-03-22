@@ -25,7 +25,7 @@ export const SERVICES: Service[] = [
     title: 'AI Chatbots',
     description: 'Smart chatbots that talk to your customers like a real person. We use advanced AI to provide instant, accurate answers and help you close more sales 24/7.',
     icon: 'MessageSquare',
-    videoUrl: 'https://images.unsplash.com/photo-1531297172864-45d06d4ebff2?auto=format&fit=crop&q=75&fm=webp&w=800',
+    videoUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'Smart Chat: Question -> Knowledge Search -> AI Answer -> Happy Customer',
     pros: [
       'Instant answers for every customer',

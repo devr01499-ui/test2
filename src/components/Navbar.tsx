@@ -42,13 +42,7 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <button 
-              onClick={() => setIsChatOpen(true)}
-              className="text-sm font-semibold text-sky-500 hover:text-sky-600 transition-colors flex items-center gap-2"
-            >
-              <Zap size={16} fill="currentColor" />
-              Chat with AI
-            </button>
+
             <Link 
               to="/contact" 
               className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-black/80 transition-all active:scale-95"
