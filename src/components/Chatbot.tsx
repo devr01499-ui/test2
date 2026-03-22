@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageSquare, Send, X, User, Mic, MicOff, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { MessageSquare, Send, X, User, Volume2, VolumeX, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useNavigationTransition } from '../NavigationContext';
 import { LocalEngine } from '../services/LocalEngine';
@@ -13,7 +13,6 @@ export default function Chatbot() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isListening, setIsListening] = useState(false);
   const [isVoiceEnabled, setIsVoiceEnabled] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const speakQueueRef = useRef<string[]>([]);
@@ -30,6 +29,7 @@ export default function Chatbot() {
 
     if (savedHistory && lastActive && (now - parseInt(lastActive)) < thirtyMinutes) {
       setMessages(JSON.parse(savedHistory));
+      setIsChatOpen(true); // Keep chat visible for returning users within 30 mins
     } else {
       setMessages([
         { role: 'bot', text: 'Hello! I am Claritiy AI. I can help you explore our expert AI solutions. Would you like a tour?' }
@@ -69,46 +69,7 @@ export default function Chatbot() {
     return () => clearTimeout(timer);
   }, [messages, isLoading]);
 
-  // Speech Recognition Setup
-  const startListening = () => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-      alert("Your browser doesn't support speech recognition.");
-      return;
-    }
-
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'en-US';
-    recognition.continuous = true;
-    recognition.interimResults = true;
-
-    recognition.onstart = () => setIsListening(true);
-    recognition.onend = () => setIsListening(false);
-    
-    recognition.onresult = (event: any) => {
-      let interimTranscript = '';
-      let finalTranscript = '';
-
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
-          finalTranscript += event.results[i][0].transcript;
-        } else {
-          interimTranscript += event.results[i][0].transcript;
-        }
-      }
-
-      const currentTranscript = finalTranscript || interimTranscript;
-      setInput(currentTranscript);
-      
-      if (finalTranscript) {
-        setTimeout(() => {
-          handleSend(finalTranscript);
-          recognition.stop();
-        }, 500);
-      }
-    };
-    recognition.start();
-  };
+  // Speech Recognition has been removed.
 
   const processSpeakQueue = () => {
     if (!isVoiceEnabled || !synthRef.current || synthRef.current.speaking) return;
@@ -122,15 +83,15 @@ export default function Chatbot() {
     const utterance = new SpeechSynthesisUtterance(currentlySpeakingRef.current);
     const voices = synthRef.current.getVoices();
     const preferredVoice = voices.find(v => 
-      v.name.includes('Google US English') || 
       v.name.includes('Samantha') || 
-      v.name.includes('Daniel')
+      v.name.includes('Google US English') || 
+      v.name.includes('Victoria')
     );
 
     if (preferredVoice) utterance.voice = preferredVoice;
-    utterance.pitch = 1.0;
-    utterance.rate = 0.95;
-    utterance.volume = 1.0;
+    utterance.pitch = 1.15; // Softer pitch
+    utterance.rate = 1.45; // 0.5x faster (Base 0.95 + 0.5)
+    utterance.volume = 0.8; // Softer volume
 
     utterance.onstart = () => setIsSpeaking(true);
     utterance.onend = () => {
@@ -147,10 +108,12 @@ export default function Chatbot() {
     synthRef.current.speak(utterance);
   };
 
-  // Stop speech if voice is disabled
+  // Stop speech if voice is disabled smoothly
   useEffect(() => {
     if (!isVoiceEnabled && synthRef.current) {
       synthRef.current.cancel();
+      currentlySpeakingRef.current = null;
+      speakQueueRef.current = [];
       setIsSpeaking(false);
     } else if (isVoiceEnabled) {
       processSpeakQueue();
@@ -263,16 +226,8 @@ export default function Chatbot() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Ask Claritiy AI..."
-                  className="w-full bg-gray-100 rounded-2xl px-5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                  className="w-full bg-gray-100 rounded-2xl px-5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all pr-4"
                 />
-                <button 
-                  onClick={startListening}
-                  className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-colors ${
-                    isListening ? 'bg-red-500 text-white animate-pulse' : 'text-gray-400 hover:text-sky-500'
-                  }`}
-                >
-                  {isListening ? <MicOff size={18} /> : <Mic size={18} />}
-                </button>
               </div>
               <button 
                 onClick={() => handleSend()}

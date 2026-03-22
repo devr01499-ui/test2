@@ -91,16 +91,24 @@ class ReasoningEngine {
     }
 
     // 5. Intent: Greetings
-    if (query.match(/hi|hello|hey|greetings/)) {
+    if (query.match(/hi|hello|hey|greetings|morning|afternoon/)) {
       return {
-        text: `Greetings. I am your Claritiy Strategic Consultant. How can I help you navigate the AI landscape today?`,
+        text: `Greetings. I am Claritiy's intelligent reasoning agent. How can I help you optimize your business architecture today?`,
         navigate: null
       };
     }
 
-    // 6. Fallback: Strategic Guidance
+    // 6. Capability: Reasoning & "Thinking"
+    if (query.includes('why') || query.includes('how can') || query.includes('explain') || query.includes('think') || query.includes('reasoning')) {
+      return {
+        text: "I deploy logical reasoning across multiple data points to map your specific problem to Claritiy's proven automation architectures. I've modeled the optimal approach, but to fully unpack the technical blueprint, I highly recommend booking an appointment with one of our human experts.",
+        navigate: null
+      };
+    }
+
+    // 7. Fallback: Cannot find answer -> Book appointment
     return {
-      text: "As your consultant, I recommend exploring our core services in Automation, Voice AI, or Enterprise Transformation to see where we can drive the most immediate value for your organization.",
+      text: "I couldn't locate a highly precise data match for your inquiry in my active knowledge base. Since Claritiy specializes in highly complex implementations, I strongly suggest booking a free 30-minute consultation so our executive team can give you a concrete, definitive answer.",
       navigate: null
     };
   }
