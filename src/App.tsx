@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Chatbot from './components/Chatbot';
 import ScrollToTop from './components/ScrollToTop';
 import { NavigationProvider } from './NavigationContext';
 
@@ -44,7 +43,6 @@ export default function App() {
             </Suspense>
           </main>
           <Footer />
-          <Chatbot />
         </div>
       </NavigationProvider>
     </Router>
