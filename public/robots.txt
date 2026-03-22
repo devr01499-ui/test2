@@ -1,0 +1,11 @@
+# Robots.txt for Claritiy AI Consultancy
+# https://claritiy.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://claritiy.com/sitemap.xml
+
+# Disallow admin or API routes
+Disallow: /api/

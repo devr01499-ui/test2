@@ -3,10 +3,20 @@ import { motion } from 'motion/react';
 import { ArrowRight, Calendar, User, Search } from 'lucide-react';
 import { BLOGS } from '../constants';
 import { Link } from 'react-router-dom';
+import SEO, { buildBreadcrumbSchema } from '../components/SEO';
 
 export default function Blog() {
   return (
     <div className="pt-20">
+      <SEO
+        title="AI Insights & Blog - Expert Perspectives on AI Automation"
+        description="Read expert insights on AI automation, digital transformation, chatbots, voice agents, and the future of enterprise AI from Claritiy's leading consultants."
+        canonical="/blog"
+        jsonLd={buildBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Blog', url: '/blog' },
+        ])}
+      />
       <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

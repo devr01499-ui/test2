@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Calendar, User, Share2 } from 'lucide-react';
 import { BLOGS } from '../constants';
+import SEO, { buildBlogPostSchema, buildBreadcrumbSchema } from '../components/SEO';
 
 export default function BlogDetail() {
   const { id } = useParams();
@@ -19,6 +20,21 @@ export default function BlogDetail() {
 
   return (
     <div className="pt-20">
+      <SEO
+        title={blog.title}
+        description={blog.excerpt}
+        canonical={`/blog/${blog.id}`}
+        ogType="article"
+        ogImage={blog.image}
+        jsonLd={[
+          buildBlogPostSchema(blog),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Blog', url: '/blog' },
+            { name: blog.title, url: `/blog/${blog.id}` },
+          ]),
+        ]}
+      />
       <article className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-sky-500 transition-colors mb-12">

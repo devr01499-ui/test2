@@ -6,10 +6,17 @@ import { SERVICES } from '../constants';
 import NodeCard from '../components/NodeCard';
 import ServiceChat from '../components/ServiceChat';
 import IndustriesSection from '../components/IndustriesSection';
+import SEO, { buildOrganizationSchema, buildWebSiteSchema } from '../components/SEO';
 
 export default function Home() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Strategic AI Solutions for Modern Enterprise"
+        description="Claritiy is a leading AI consultancy helping businesses grow with AI automation, smart chatbots, human-like voice agents, and strategic AI transformation. Book a free demo today."
+        canonical="/"
+        jsonLd={[buildOrganizationSchema(), buildWebSiteSchema()]}
+      />
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-sky-50 opacity-50" />

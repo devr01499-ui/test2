@@ -3,10 +3,24 @@ import { motion } from 'motion/react';
 import { PRODUCTS } from '../constants';
 import { ArrowRight, ShoppingCart, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO, { buildProductListSchema, buildProductSchema, buildBreadcrumbSchema } from '../components/SEO';
 
 export default function Products() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Enterprise AI Products - Claritiy Core, VoiceFlow Pro, Custom AI CRM"
+        description="Deploy battle-tested enterprise AI products by Claritiy. Claritiy Core AI platform, VoiceFlow Pro voice calling system, and Custom AI CRM for sales intelligence. SOC2 compliant, 99.99% uptime."
+        canonical="/products"
+        jsonLd={[
+          buildProductListSchema(PRODUCTS),
+          ...PRODUCTS.map(p => buildProductSchema(p)),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Products', url: '/products' },
+          ]),
+        ]}
+      />
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

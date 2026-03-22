@@ -1,8 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function Terms() {
   return (
     <div className="pt-40 pb-20 max-w-4xl mx-auto px-4">
+      <SEO
+        title="Terms of Service"
+        description="Read Claritiy AI Consultancy's Terms of Service. Understand the terms and conditions governing your use of our website and AI consultancy services."
+        canonical="/terms"
+      />
       <h1 className="text-5xl font-black mb-10">Terms of Service</h1>
       <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
         <p>Last Updated: March 18, 2026</p>

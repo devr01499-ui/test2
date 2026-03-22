@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowLeft, CheckCircle2, Zap, ArrowRight, Sparkles, Building2 } from 'lucide-react';
 import { SERVICES } from '../constants';
 import ServiceChat from '../components/ServiceChat';
+import SEO, { buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema } from '../components/SEO';
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -18,8 +19,32 @@ export default function ServiceDetail() {
     );
   }
 
+  const serviceFaqs = [
+    { question: `What is ${service.title}?`, answer: service.description },
+    { question: `Why choose Claritiy for ${service.title}?`, answer: service.howWeExcel || `We provide enterprise-grade ${service.title} solutions tailored to your business needs.` },
+    ...(service.pros || []).map(pro => ({
+      question: `How does Claritiy's ${service.title} help my business?`,
+      answer: pro,
+    })).slice(0, 1),
+  ];
+
   return (
     <div className="pt-20">
+      <SEO
+        title={`${service.title} - Expert AI Solutions`}
+        description={`${service.description} Explore how Claritiy's ${service.title} service drives ROI for enterprises worldwide.`}
+        canonical={`/services/${service.id}`}
+        ogImage={service.videoUrl}
+        jsonLd={[
+          buildServiceSchema(service),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: service.title, url: `/services/${service.id}` },
+          ]),
+          buildFAQSchema(serviceFaqs),
+        ]}
+      />
       <section className="py-20 bg-black text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-sky-500/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

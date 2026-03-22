@@ -4,10 +4,23 @@ import { SERVICES } from '../constants';
 import NodeCard from '../components/NodeCard';
 import { Play, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO, { buildServiceListSchema, buildBreadcrumbSchema } from '../components/SEO';
 
 export default function Services() {
   return (
     <div className="pt-20">
+      <SEO
+        title="AI Consultancy Services - Automation, Chatbots, Voice Agents & More"
+        description="Explore Claritiy's full range of AI consultancy services including AI Automation, AI Chatbots, AI Voice Agents, AI Strategy, Hire AI Experts, and Custom AI Jarvis assistants. Enterprise-grade solutions."
+        canonical="/services"
+        jsonLd={[
+          buildServiceListSchema(SERVICES),
+          buildBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+          ]),
+        ]}
+      />
       <section className="py-20 bg-sky-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

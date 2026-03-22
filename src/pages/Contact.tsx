@@ -2,10 +2,16 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, MessageSquare, Shield, Zap, Globe } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO
+        title="Contact Us - Book a Free AI Demo"
+        description="Get in touch with Claritiy's AI consultants. Book a free 30-minute demo call, request an enterprise AI audit, or learn how we can transform your business with AI automation."
+        canonical="/contact"
+      />
       {/* Hero Section */}
       <section className="py-20 bg-black text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-sky-500/10 blur-3xl -z-0" />

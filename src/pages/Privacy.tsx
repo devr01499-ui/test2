@@ -1,8 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function Privacy() {
   return (
     <div className="pt-40 pb-20 max-w-4xl mx-auto px-4">
+      <SEO
+        title="Privacy Policy"
+        description="Read Claritiy AI Consultancy's Privacy Policy. Learn how we collect, use, and protect your personal information with enterprise-grade security."
+        canonical="/privacy"
+      />
       <h1 className="text-5xl font-black mb-10">Privacy Policy</h1>
       <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
         <p>Last Updated: March 18, 2026</p>
