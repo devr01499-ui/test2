@@ -13,7 +13,12 @@ export const SERVICES: Service[] = [
       'AI that makes smart decisions for you',
       'Works perfectly with your existing tools'
     ],
-    howWeExcel: 'We don\'t just set up simple tools. We build smart AI systems that learn your business and get better over time, making sure you always stay ahead of the competition.'
+    howWeExcel: 'We don\'t just set up simple tools. We build smart AI systems that learn your business and get better over time, making sure you always stay ahead of the competition.',
+    industries: [
+      { name: 'Manufacturing', content: 'Automate inventory tracking, supply chain forecasting, and quality control alerts to reduce downtime and improve yield.' },
+      { name: 'Healthcare', content: 'Streamline patient onboarding, appointment scheduling, and insurance claim processing securely and efficiently.' },
+      { name: 'Logistics', content: 'Optimize delivery routes in real-time and automate fleet maintenance scheduling, saving thousands in fuel and repair costs.' }
+    ]
   },
   {
     id: 'ai-chatbots',
@@ -27,7 +32,12 @@ export const SERVICES: Service[] = [
       'Works on your website 24/7',
       'Trained on your specific business data'
     ],
-    howWeExcel: 'Our chatbots aren\'t just basic responders. They are trained on your company\'s knowledge to provide accurate, helpful, and human-like support that builds real trust with your customers.'
+    howWeExcel: 'Our chatbots aren\'t just basic responders. They are trained on your company\'s knowledge to provide accurate, helpful, and human-like support that builds real trust with your customers.',
+    industries: [
+      { name: 'E-commerce', content: 'Handle thousands of WISMO (Where Is My Order) queries instantly, recommend products, and recover abandoned carts 24/7.' },
+      { name: 'Customer Support', content: 'Deflect up to 80% of level-one support tickets so your human agents can focus on high-value, complex resolutions.' },
+      { name: 'SaaS', content: 'Walk users through onboarding seamlessly inside your app and answer technical documentation questions on the fly.' }
+    ]
   },
   {
     id: 'ai-voice',
@@ -41,7 +51,12 @@ export const SERVICES: Service[] = [
       'Sounds like a real person',
       'Automatically updates your CRM'
     ],
-    howWeExcel: 'Our voice AI is built for real conversations. It can handle interruptions and complex questions naturally, providing a much better experience than old-fashioned phone systems.'
+    howWeExcel: 'Our voice AI is built for real conversations. It can handle interruptions and complex questions naturally, providing a much better experience than old-fashioned phone systems.',
+    industries: [
+      { name: 'Real Estate', content: 'Qualify property leads instantly over the phone and automatically book viewings directly into your calendar.' },
+      { name: 'Auto Dealerships', content: 'Follow up with test drive inquiries within seconds and handle routine service booking calls hands-free.' },
+      { name: 'Clinics & Salons', content: 'Never miss a booking again. Voice agents can manage your entire reception, handling cancellations, rescheduling, and FAQs.' }
+    ]
   },
   {
     id: 'ai-transformation',
@@ -55,7 +70,12 @@ export const SERVICES: Service[] = [
       'Expert advice on the best AI tools',
       'Training for your whole team'
     ],
-    howWeExcel: 'We don\'t just give you software; we give you a competitive edge. We help you rethink your business for the AI era, making sure you\'re ready for the future.'
+    howWeExcel: 'We don\'t just give you software; we give you a competitive edge. We help you rethink your business for the AI era, making sure you\'re ready for the future.',
+    industries: [
+      { name: 'Enterprise Corporate', content: 'Develop comprehensive, company-wide AI adoption roadmaps with stringent security and compliance guardrails.' },
+      { name: 'Finance & Banking', content: 'Strategize the deployment of predictive analytics for fraud detection and portfolio risk management safely.' },
+      { name: 'Retail Chains', content: 'Restructure your merchandising strategy with AI-driven demand forecasting and dynamic pricing models.' }
+    ]
   },
   {
     id: 'ai-experts',
@@ -69,7 +89,31 @@ export const SERVICES: Service[] = [
       'Build your AI team in weeks, not months',
       'Experts who understand both tech and business'
     ],
-    howWeExcel: 'We have a deep network of the world\'s best AI talent. We find the people who can lead your most important projects and help you scale your business with confidence.'
+    howWeExcel: 'We have a deep network of the world\'s best AI talent. We find the people who can lead your most important projects and help you scale your business with confidence.',
+    industries: [
+      { name: 'Tech Startups', content: 'Scale your engineering team rapidly with pre-vetted AI specialists to hit your seed funding milestones faster.' },
+      { name: 'Research Labs', content: 'Bring in elite PhD-level talent to crack complex machine learning and LLM fine-tuning problems.' },
+      { name: 'Agencies', content: 'White-label our AI experts to deliver high-end AI development projects for your own enterprise clients.' }
+    ]
+  },
+  {
+    id: 'ai-jarvis',
+    title: 'Custom AI Jarvis',
+    description: 'A fully customized, personalized AI assistant for your daily operations. Your own Jarvis that integrates with your unique software stack and automates your specific personal or business tasks.',
+    icon: 'Cpu',
+    videoUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    demoContent: 'Personalized Assistant: Command -> Context Retrieval -> Action Execution',
+    pros: [
+      'Tailor-made for your specific daily workflow',
+      'Integrates directly with your custom software',
+      'Learns your personal preferences over time'
+    ],
+    howWeExcel: 'We treat your AI Jarvis as a bespoke product. We map out your exact daily operations and build an agent that acts exactly as you would, saving you hours of management time.',
+    industries: [
+      { name: 'Executive Management', content: 'Jarvis can draft emails in your exact tone, schedule multi-timezone meetings autonomously, and summarize daily KPI reports.' },
+      { name: 'Software Teams', content: 'Automate code reviews, sprint planning summaries, and cross-team communication tracking all from a single custom terminal.' },
+      { name: 'Legal & Compliance', content: 'Let your Jarvis instantly scan thousands of contracts for specific clauses, draft initial legal briefs, and trigger compliance alerts.' }
+    ]
   }
 ];
 

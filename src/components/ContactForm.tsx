@@ -128,6 +128,7 @@ export default function ContactForm() {
                         <option value="AI Strategy Consulting">AI Strategy Consulting</option>
                         <option value="Custom AI Development">Custom AI Development</option>
                         <option value="Data Analytics">Data Analytics</option>
+                        <option value="Custom AI Jarvis">Custom AI Jarvis</option>
                       </select>
                     </div>
                   </div>

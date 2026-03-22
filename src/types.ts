@@ -7,6 +7,10 @@ export interface Service {
   demoContent: string;
   pros?: string[];
   howWeExcel?: string;
+  industries?: {
+    name: string;
+    content: string;
+  }[];
 }
 
 export interface BlogPost {
