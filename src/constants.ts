@@ -6,7 +6,7 @@ export const SERVICES: Service[] = [
     title: 'AI Automation',
     description: 'We build smart workflows that handle repetitive tasks automatically. Our AI systems help your business run faster and more efficiently by taking over manual processes.',
     icon: 'Zap',
-    videoUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200',
+    videoUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'Smart Task Management: Analysis -> Automation -> Execution -> Results',
     pros: [
       'Save up to 75% of your time',
@@ -25,7 +25,7 @@ export const SERVICES: Service[] = [
     title: 'AI Chatbots',
     description: 'Smart chatbots that talk to your customers like a real person. We use advanced AI to provide instant, accurate answers and help you close more sales 24/7.',
     icon: 'MessageSquare',
-    videoUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=1200',
+    videoUrl: 'https://images.unsplash.com/photo-1531297172864-45d06d4ebff2?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'Smart Chat: Question -> Knowledge Search -> AI Answer -> Happy Customer',
     pros: [
       'Instant answers for every customer',
@@ -44,7 +44,7 @@ export const SERVICES: Service[] = [
     title: 'AI Voice Agents',
     description: 'AI-powered voice assistants that sound completely human. They can handle your customer calls, book appointments, and follow up with leads automatically.',
     icon: 'Phone',
-    videoUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=1200',
+    videoUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'Voice Assistant: Listening -> Understanding -> Human-like Response',
     pros: [
       'Super fast response times',
@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
     title: 'AI Strategy',
     description: 'A clear plan to help your business adopt AI. We guide you through the process of choosing the right tools and setting up the infrastructure you need to grow.',
     icon: 'RefreshCw',
-    videoUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    videoUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'AI Roadmap: Business Audit -> Strategy -> Setup -> Success',
     pros: [
       'A complete plan for your AI journey',
@@ -82,7 +82,7 @@ export const SERVICES: Service[] = [
     title: 'Hire AI Experts',
     description: 'Get access to top AI talent without the long hiring process. We provide pre-vetted experts who can help you build and scale your AI projects quickly.',
     icon: 'Users',
-    videoUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200',
+    videoUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'Expert Matching: Sourcing -> Vetting -> Selection -> Onboarding',
     pros: [
       'Access to top-tier AI researchers',
@@ -101,7 +101,7 @@ export const SERVICES: Service[] = [
     title: 'Custom AI Jarvis',
     description: 'A fully customized, personalized AI assistant for your daily operations. Your own Jarvis that integrates with your unique software stack and automates your specific personal or business tasks.',
     icon: 'Cpu',
-    videoUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    videoUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=75&fm=webp&w=800',
     demoContent: 'Personalized Assistant: Command -> Context Retrieval -> Action Execution',
     pros: [
       'Tailor-made for your specific daily workflow',
@@ -266,20 +266,20 @@ export const PRODUCTS: Product[] = [
     name: 'Claritiy Core',
     description: 'Our all-in-one AI platform for your business. It helps you manage all your AI tools and data in one secure place.',
     price: 'Enterprise Quote',
-    image: 'https://images.unsplash.com/photo-1551288049-bbdac8a28a1e?auto=format&fit=crop&q=80&w=1000'
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=75&fm=webp&w=800'
   },
   {
     id: 'p2',
     name: 'VoiceFlow Pro',
     description: 'The best system for AI voice calls. It handles thousands of calls at once with perfect clarity and no delays.',
     price: 'Enterprise Quote',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000'
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=75&fm=webp&w=800'
   },
   {
     id: 'p3',
     name: 'Custom AI CRM',
     description: 'A smart sales platform that helps you find and close more deals. It uses AI to predict what your customers need before they even ask.',
     price: 'Enterprise Quote',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000'
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=75&fm=webp&w=800'
   }
 ];

@@ -98,10 +98,11 @@ export default function Home() {
               <div className="absolute -inset-4 bg-white/10 rounded-[2rem] blur-2xl group-hover:bg-white/20 transition-all" />
               <div className="relative bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video">
                 <img 
-                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000" 
+                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=75&fm=webp&w=800" 
                   alt="AI Visualization" 
                   className="w-full h-full object-cover opacity-80"
                   referrerPolicy="no-referrer"
+                  fetchPriority="high"
                 />
               </div>
             </div>

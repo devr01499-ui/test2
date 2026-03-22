@@ -78,6 +78,7 @@ export default function ServiceDetail() {
                   alt={service.title} 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  fetchPriority="high"
                 />
               </div>
 
