@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Play, CheckCircle2, Zap, MessageSquare, Phone, RefreshCw, Users } from 'lucide-react';
 import { Service } from '../types';
@@ -13,18 +14,8 @@ const iconMap: Record<string, any> = {
 };
 
 export default function NodeCard({ service }: { service: Service }) {
-  const [isExecuting, setIsExecuting] = useState(false);
-  const [showResult, setShowResult] = useState(false);
+  const navigate = useNavigate();
   const Icon = iconMap[service.icon] || Zap;
-
-  const handleExecute = () => {
-    setIsExecuting(true);
-    setShowResult(false);
-    setTimeout(() => {
-      setIsExecuting(false);
-      setShowResult(true);
-    }, 1500);
-  };
 
   return (
     <motion.div 
@@ -49,38 +40,9 @@ export default function NodeCard({ service }: { service: Service }) {
       </p>
 
       <div className="space-y-4">
-        <div className="bg-gray-50 rounded-lg p-3 border border-black/5 min-h-[60px] flex items-center justify-center text-xs font-mono text-gray-500">
-          {isExecuting ? (
-            <div className="flex items-center gap-2">
-              <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-              >
-                <RefreshCw size={14} />
-              </motion.div>
-              Executing node...
-            </div>
-          ) : showResult ? (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-sky-600 flex items-center gap-2"
-            >
-              <CheckCircle2 size={14} />
-              {service.demoContent}
-            </motion.div>
-          ) : (
-            null
-          )}
-        </div>
-
         <button 
-          onClick={handleExecute}
-          disabled={isExecuting}
-          className={cn(
-            "execute-btn w-full flex items-center justify-center gap-2",
-            isExecuting && "opacity-50 cursor-not-allowed"
-          )}
+          onClick={() => navigate('/contact')}
+          className="execute-btn w-full flex items-center justify-center gap-2 hover:bg-sky-50 transition-colors"
         >
           <Play size={16} fill="currentColor" />
           Book Appointment

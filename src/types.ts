@@ -12,6 +12,10 @@ export interface Service {
     name: string;
     content: string;
   }[];
+  useCases?: {
+    name: string;
+    content: string;
+  }[];
 }
 
 export interface BlogPost {

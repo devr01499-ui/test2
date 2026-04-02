@@ -133,6 +133,33 @@ export default function ServiceDetail() {
                   </div>
                 </div>
               )}
+
+              {service.useCases && service.useCases.length > 0 && (
+                <div className="pt-8 border-t border-black/10">
+                  <h3 className="text-3xl font-black mb-8">Enterprise Use Cases</h3>
+                  <div className="grid gap-6">
+                    {service.useCases.map((useCase, i) => (
+                      <motion.div 
+                        key={`uc-${i}`}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="bg-white p-6 rounded-2xl border-2 border-black/5 hover:border-sky-500 transition-colors shadow-sm"
+                      >
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="bg-sky-50 text-sky-500 p-2 rounded-xl">
+                            <Zap size={24} />
+                          </div>
+                          <h4 className="text-xl font-bold">{useCase.name}</h4>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed ml-12">
+                          {useCase.content}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="sticky top-32 space-y-8">

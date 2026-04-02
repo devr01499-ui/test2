@@ -17,8 +17,15 @@ export const SERVICES: Service[] = [
     howWeExcel: 'We don\'t just set up simple automation tools. We build intelligent AI systems that continuously learn from your business operations, adapt to changing patterns, and get smarter over time. This means you stay ahead of competitors who are stuck with static automation that requires constant manual updates.',
     industries: [
       { name: 'Manufacturing', content: 'Automate inventory tracking, supply chain forecasting, and quality control alerts to reduce downtime by 40% and improve yield rates.' },
-      { name: 'Healthcare', content: 'Streamline patient onboarding, appointment scheduling, and insurance claim processing securely and efficiently while maintaining HIPAA compliance.' },
-      { name: 'Logistics', content: 'Optimize delivery routes in real-time and automate fleet maintenance scheduling, saving thousands in fuel and repair costs annually.' }
+      { name: 'Healthcare', content: 'Streamline patient onboarding, appointment scheduling, and insurance claim processing securely and efficiently while maintaining strict HIPAA compliance.' },
+      { name: 'Logistics & Supply Chain', content: 'Optimize delivery routes in real-time, automate fleet maintenance scheduling, and process shipping manifests to save millions in operational costs.' },
+      { name: 'Financial Services', content: 'Automate high-volume compliance reporting, KYC onboarding checks, and loan application data extraction with near-zero error rates.' }
+    ],
+    useCases: [
+      { name: 'Intelligent Document Processing', content: 'Extract, classify, and input unstructured data from invoices, contracts, and receipts directly into your ERP/CRM without human intervention.' },
+      { name: 'HR & Employee Onboarding', content: 'Create seamless, automated workflows that provision software accounts, schedule orientation, and collect tax forms the moment a candidate is hired.' },
+      { name: 'Financial Reconciliation', content: 'Autonomously match thousands of ledger entries across disparate banking systems and flag only the anomalies for human review.' },
+      { name: 'Dynamic Compliance Auditing', content: 'Continuously scan internal communications and transaction logs against regulatory frameworks to automatically flag compliance risks.' }
     ]
   },
   {
@@ -36,9 +43,16 @@ export const SERVICES: Service[] = [
     ],
     howWeExcel: 'Our chatbots aren\'t basic FAQ responders. They\'re trained on your company\'s knowledge base, product catalog, and historical conversations to provide accurate, helpful, and genuinely human-like support. They understand context, handle multi-turn conversations, and escalate complex issues to human agents seamlessly—building real trust with your customers.',
     industries: [
-      { name: 'E-commerce', content: 'Handle thousands of \'Where Is My Order\' (WISMO) queries instantly, recommend products based on browsing history, and recover abandoned carts with personalized offers—all automatically.' },
-      { name: 'Customer Support', content: 'Deflect up to 80% of level-one support tickets automatically, freeing your human agents to focus on complex, high-value customer issues that require empathy and judgment.' },
-      { name: 'SaaS', content: 'Guide users through onboarding flows seamlessly inside your application, answer technical documentation questions on the fly, and reduce time-to-value for new customers.' }
+      { name: 'E-commerce & Retail', content: 'Handle thousands of WISMO (Where Is My Order) queries instantly, recommend products based on browsing history, and recover abandoned carts with personalized offers.' },
+      { name: 'Telecommunications', content: 'Resolve billing inquiries, facilitate plan upgrades, and troubleshoot network issues at scale without forcing customers through frustrating IVR trees.' },
+      { name: 'Travel & Hospitality', content: 'Automate booking modifications, answer pre-arrival FAQs, and provide 24/7 concierge-level service across multiple time zones and languages.' },
+      { name: 'SaaS & Technology', content: 'Guide users through complex onboarding flows directly inside your web application and resolve Level-1 tech support tickets autonomously.' }
+    ],
+    useCases: [
+      { name: '24/7 Level-1 Support', content: 'Deflect up to 85% of routine support tickets by providing instant, accurate answers pulled directly from your internal knowledge base and documentation.' },
+      { name: 'Conversational Commerce', content: 'Turn your chat widget into an active revenue driver by utilizing AI to qualify leads, intelligently cross-sell, and close sales directly within the chat interface.' },
+      { name: 'Multi-lingual Localization', content: 'Automatically detect the user\'s language and provide flawless, culturally-aware support in over 50 languages without hiring translation teams.' },
+      { name: 'Seamless Human Escalation', content: 'Identify when a customer is frustrated or has a complex issue and seamlessly hand off the conversation to a human agent along with a complete summary.' }
     ]
   },
   {
@@ -56,9 +70,18 @@ export const SERVICES: Service[] = [
     ],
     howWeExcel: 'Our voice AI is built for real, complex conversations—not just scripted responses. It handles interruptions gracefully, understands regional accents, adapts to the caller\'s tone, and asks clarifying questions when needed. This provides a vastly better experience than old-fashioned IVR systems, leading to higher customer satisfaction and conversion rates.',
     industries: [
-      { name: 'Real Estate', content: 'Qualify property leads instantly over the phone and automatically book viewings directly into your calendar—no more playing phone tag with prospects.' },
-      { name: 'Auto Dealerships', content: 'Follow up with test drive inquiries within seconds and handle routine service booking calls hands-free, letting your sales team focus on closing deals.' },
-      { name: 'Clinics & Salons', content: 'Never miss a booking again. Voice agents manage your entire reception desk—handling cancellations, rescheduling, appointment reminders, and FAQs without human intervention.' }
+      { name: 'Telecommunications', content: 'Smarter support for every subscriber. Handle bill payments, plan adjustments, and tech support triage over the phone instantly.' },
+      { name: 'Financial Services', content: 'Deliver secure, instant service. Automate account balance inquiries, fraud alerts, and appointment scheduling with absolute precision.' },
+      { name: 'Healthcare', content: 'Improve care operations. Manage high-volume patient scheduling, pre-appointment instructions, and automated follow-up calls securely.' },
+      { name: 'Technology', content: 'Drive growth and retention. Handle enterprise software billing questions and tier-1 vendor support without putting clients on hold.' },
+      { name: 'Retail and E-commerce', content: 'Increase sales and customer loyalty. Manage return authorizations, store hours inquiries, and order tracking via fully conversational voice.' },
+      { name: 'Government', content: 'Improve access to public services. Guide citizens through application processes, tax inquiries, and public scheduling 24/7.' }
+    ],
+    useCases: [
+      { name: 'Customer Support', content: 'Resolve inquiries with AI agents. Eliminate wait times completely by having human-sounding AI answer every incoming support call in under 2 seconds.' },
+      { name: 'Lead Qualification', content: 'Turn more leads into revenue. Instantly call inbound internet leads within 60 seconds of submission to qualify them and book meetings for your closers.' },
+      { name: 'Outbound', content: 'Scale outreach efficiently. Run massive outbound calling campaigns for B2B lists or debt collection with compliance and perfect conversational execution.' },
+      { name: 'AI Receptionist', content: 'Streamline business operations. Replace expensive front-desk bottlenecks with an intelligent router that takes messages, answers FAQs, and forwards calls appropriately.' }
     ]
   },
   {
@@ -78,7 +101,14 @@ export const SERVICES: Service[] = [
     industries: [
       { name: 'Enterprise Corporate', content: 'Develop comprehensive, company-wide AI adoption roadmaps with stringent security, compliance, and governance guardrails for Fortune 500 organizations.' },
       { name: 'Finance & Banking', content: 'Strategize the deployment of predictive analytics for fraud detection, credit risk assessment, and portfolio management—safely navigating regulatory requirements.' },
-      { name: 'Retail Chains', content: 'Restructure merchandising strategy with AI-driven demand forecasting, dynamic pricing models, and personalized marketing campaigns that increase margins by 15-25%.' }
+      { name: 'Retail Chains', content: 'Restructure merchandising strategy with AI-driven demand forecasting, dynamic pricing models, and personalized marketing campaigns that increase margins by 15-25%.' },
+      { name: 'Manufacturing', content: 'Design multi-year Industry 4.0 transformations, moving from legacy systems to predictive maintenance and AI-optimized supply webs.' }
+    ],
+    useCases: [
+      { name: 'AI Readiness Auditing', content: 'Conduct comprehensive evaluations of your current data infrastructure, software stack, and team capabilities to identify viable AI insertion points.' },
+      { name: 'ROI Modeling & Vendor Selection', content: 'Prevent expensive software mistakes by having our experts build financial models and objectively vet third-party AI vendors against your requirements.' },
+      { name: 'Governance & AI Ethics', content: 'Establish internal corporate policies surrounding data usage, hallucination mitigation, bias, and acceptable use of generative models by employees.' },
+      { name: 'Executive AI Training', content: 'Equip C-suite and VP-level leaders with the strategic understanding required to lead AI initiatives and shift the corporate culture toward innovation.' }
     ]
   },
   {
@@ -98,7 +128,14 @@ export const SERVICES: Service[] = [
     industries: [
       { name: 'Tech Startups', content: 'Scale your engineering team rapidly with pre-vetted AI specialists to hit seed funding milestones faster and build your MVP in weeks instead of months.' },
       { name: 'Research Labs', content: 'Bring in elite PhD-level talent to tackle complex machine learning challenges, fine-tune large language models, and publish cutting-edge research.' },
-      { name: 'Agencies', content: 'White-label our AI experts to deliver high-end AI development projects for your enterprise clients without building an internal AI department.' }
+      { name: 'Agencies & Consultancies', content: 'White-label our AI experts to deliver high-end AI development projects for your enterprise clients without the overhead of building an internal AI department.' },
+      { name: 'Healthcare & Pharma', content: 'Deploy bioinformatics specialists and computer vision experts to accelerate drug discovery pipelines and medical imaging diagnostics.' }
+    ],
+    useCases: [
+      { name: 'LLM Fine-Tuning', content: 'Contract specialized engineers to fine-tune open-source models (Llama, Mistral) on your proprietary corporate data for internal deployment.' },
+      { name: 'Computer Vision Development', content: 'Deploy experts capable of building robust YOLO/ResNet systems for manufacturing defect detection or autonomous spatial mapping.' },
+      { name: 'Predictive Analytics', content: 'Hire elite data scientists who can clean messy data lakes and build XGBoost forecasting models with massive ROI potential.' },
+      { name: 'Fractional AI Leadership', content: 'Bring on a part-time Chief AI Officer (CAIO) to steer technical direction, mentor jr engineers, and align your tech stack with industry standards.' }
     ]
   },
   {
@@ -118,7 +155,14 @@ export const SERVICES: Service[] = [
     industries: [
       { name: 'Executive Management', content: 'Your Jarvis drafts emails in your exact tone, schedules multi-timezone meetings autonomously, summarizes daily KPI reports, and prepares briefing documents before every call.' },
       { name: 'Software Development Teams', content: 'Automate code reviews, sprint planning summaries, cross-team communication tracking, and technical documentation—all from a single custom terminal interface.' },
-      { name: 'Legal & Compliance', content: 'Let your Jarvis instantly scan thousands of contracts for specific clauses, draft initial legal briefs based on case precedent, and trigger compliance alerts for regulatory changes.' }
+      { name: 'Legal & Compliance', content: 'Let your Jarvis instantly scan thousands of contracts for specific clauses, draft initial legal briefs based on case precedent, and trigger compliance alerts.' },
+      { name: 'Investment Banking & PE', content: 'Deploy a personalized agent to scrape SEC filings, summarize quarterly earnings calls, and track competitor sentiment within seconds of data release.' }
+    ],
+    useCases: [
+      { name: 'Autonomous Inbox Management', content: 'Your digital twin reads your emails, categorizes them by urgency, drafts responses based on your historical replies, and directly files away noise.' },
+      { name: 'Intelligent Meeting Orchestration', content: 'Jarvis negotiates calendar slots with external stakeholders, sends prep material exactly 1 hour prior, and joins calls to take action-oriented notes.' },
+      { name: 'Custom Market Research', content: 'Command your Jarvis to scour the internet, aggregate data on ten competitors, and produce a formatted slide deck showcasing market gaps in under 5 minutes.' },
+      { name: 'Cross-App Workflow Stitching', content: 'Eliminate tab-switching by having Jarvis act as a universal conductor—moving data seamlessly from Slack, to Jira, to Salesforce, and into Notion automatically.' }
     ]
   }
 ];
