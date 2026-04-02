@@ -55,6 +55,47 @@ async function startServer() {
     }
   });
 
+  // Chatbot sign-in notification
+  app.post("/api/telegram-chat-signin", async (req, res) => {
+    const { name, email, contactNo } = req.body;
+
+    const message = `
+💬 *New Chatbot User Signed In* 💬
+
+👤 *Name*: \`${name}\`
+📞 *Contact*: \`${contactNo}\`
+✉️ *Email*: \`${email}\`
+🕐 *Time*: \`${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}\`
+    `;
+
+    const token = "8687398510:AAFRpw9NjP4D5dB3cWP68bfQe7ZsCbro9yk";
+    const chatId = "1564118457";
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+    try {
+      const tgResponse = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "Markdown"
+        })
+      });
+
+      if (tgResponse.ok) {
+        res.json({ success: true, message: "Chat sign-in recorded." });
+      } else {
+        const errData = await tgResponse.text();
+        console.error('Telegram API error:', errData);
+        res.status(500).json({ success: false, message: "Failed to send Telegram notification." });
+      }
+    } catch (error) {
+      console.error('Error sending Telegram message:', error);
+      res.status(500).json({ success: false, message: "Failed to send notification." });
+    }
+  });
+
   app.post("/api/book", async (req, res) => {
     const { name, email, contactNo, service, date, time } = req.body;
 
