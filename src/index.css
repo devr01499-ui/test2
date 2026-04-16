@@ -9,8 +9,12 @@
   --bg-sky-box: #0ea5e9;
 }
 
+* {
+  background-attachment: fixed;
+}
+
 body {
-  @apply bg-white text-black font-sans;
+  @apply bg-transparent text-black font-sans;
 }
 
 h1, h2, h3, h4, h5, h6 {
